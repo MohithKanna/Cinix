@@ -1,0 +1,91 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0%;
+  backdrop-filter: var(--blur-md);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: max-content;
+  min-height: max-content;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transition: all var(--transition);
+}
+
+.overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+.overlay.overlay-backdrop.active {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--glass-heavy);
+}
+
+.overlay-container {
+  position: relative;
+  min-width: 85vw;
+  max-width: 90vw;
+  min-height: 85vh;
+  max-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 1001;
+  box-shadow: 0 0 0 3px var(--glass-border);
+  transform: scale(0.95);
+  transition: all var(--transition);
+}
+
+.overlay.active .overlay-container {
+  transform: scale(1);
+}
+
+.overlay-media {
+  align-self: center;
+  justify-self: center;
+  width: 100%;
+  margin: 0 auto;
+  aspect-ratio: 16 / 9;
+  border: none;
+  display: block;
+  object-fit: contain;
+}
+
+.overlay-poster {
+  display: block;
+  height: 90vh;
+  border: none;
+  margin: 20px auto;
+  object-fit: contain;
+}
+.overlay-close {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  width: 30px;
+  height: 30px;
+  color: var(--accent);
+  border-radius: 50%;
+  font-size: var(--text-md);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: var(--blur-md);
+  background: var(--glass-heavy);
+  border: 2px solid var(--glass-border);
+  z-index: 10;
+}

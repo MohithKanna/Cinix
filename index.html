@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CINIX</title>
+    <meta
+      name="description"
+      content="Cinema, Curated. Discover movies worth your time on CINIX. Explore curated collections, ratings, and recommendations built for every film lover."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.cinix.com/" />
+    <meta property="og:title" content="CINIX | Cinema, Curated" />
+    <meta
+      property="og:description"
+      content="Discover movies worth your time. Curated collections, ratings, and recommendations for every film lover."
+    />
+    <meta property="og:image" content="https://www.cinix.com/assets/logo.jpg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="main.css" />
+    <link rel="icon" type="image/svg+xml" href="assets/defaults/favicon.svg" />
+  </head>
+  <body>
+    <header class="glass-heavy">
+      <nav id="nav-bar">
+        <div id="logo">
+          <img class="logo-img" src="./assets/defaults/logo.svg" alt="logo" />
+        </div>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+        <div id="nav-options">
+          <button id="home-btn" class="nav-btn">HOME</button>
+          <button id="search-btn" class="nav-btn">SEARCH</button>
+          <button id="watchlist-btn" class="nav-btn">WATCHLIST</button>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main-page">
+      <section id="home-page" class="page">
+        <section id="hero-section">
+          <div class="hero-backdrop active"></div>
+          <div class="hero-backdrop next"></div>
+          <button id="hero-prev" class="hero-nav-btn">‹</button>
+          <button id="hero-next" class="hero-nav-btn">›</button>
+          <div id="hero-description-container">
+            <h1 id="hero-title"></h1>
+            <div id="hero-meta">
+              <span id="hero-rating"></span> |
+              <span id="hero-year"></span>
+            </div>
+            <div id="hero-genres"></div>
+            <p id="hero-overview"></p>
+            <button id="hero-details-btn">View Details</button>
+          </div>
+        </section>
+        <div style="display: none" class="card-container">
+          <div class="card-container-title">Popular Movies</div>
+          <div id="popular-scroller-movies" class="card-scroller"></div>
+        </div>
+        <div style="display: none" class="card-container">
+          <div class="card-container-title">Popular Series</div>
+          <div id="popular-scroller-series" class="card-scroller"></div>
+        </div>
+        <div style="display: none" class="card-container">
+          <div class="card-container-title">Top Rated Movies</div>
+          <div id="top-rated-scroller-movies" class="card-scroller"></div>
+        </div>
+        <div style="display: none" class="card-container">
+          <div class="card-container-title">Top Rated Series</div>
+          <div id="top-rated-scroller-series" class="card-scroller"></div>
+        </div>
+        <div style="display: none" class="card-container">
+          <div class="card-container-title">Popular People</div>
+          <div id="popular-scroller-people" class="card-scroller"></div>
+        </div>
+        <div style="display: none" class="card-container">
+          <div class="card-container-title">Now Playing</div>
+          <div id="now-playing-scroller-movies" class="card-scroller"></div>
+        </div>
+        <div style="display: none" class="card-container">
+          <div class="card-container-title">Airing Today</div>
+          <div id="airing-today-scroller-series" class="card-scroller"></div>
+        </div>
+        <div style="display: none" class="card-container">
+          <div class="card-container-title">Upcoming Movies</div>
+          <div id="upcoming-scroller-movies" class="card-scroller"></div>
+        </div>
+        <div style="display: none" class="card-container">
+          <div class="card-container-title">On Air</div>
+          <div id="on-air-scroller-series" class="card-scroller"></div>
+        </div>
+      </section>
+      <section id="detail-page" class="page"></section>
+      <section id="search-page" class="page"></section>
+      <section id="watchlist-page" class="page"></section>
+    </main>
+
+    <footer id="footer" class="glass-heavy">
+      <section class="footer-brand">
+        <div>
+          <img
+            id="footer-logo"
+            class="logo-img"
+            src="./assets/defaults/logo.svg"
+            alt="logo"
+          />
+        </div>
+        <strong>Cinema, Curated.</strong>
+        <p class="footer-description">
+          Discover movies worth your time. Curated collections, ratings, and
+          recommendations for every film lover.
+        </p>
+      </section>
+
+      <section id="footer-navigation">
+        <section class="footer-links">
+          <h3>Explore</h3>
+          <ul>
+            <li><a href="#search?tab=movie">Movies</a></li>
+            <li><a href="#search?tab=tv">TV Shows</a></li>
+          </ul>
+        </section>
+
+        <section class="footer-links">
+          <h3>Contact</h3>
+
+          <ul>
+            <li>
+              <a href="mailto:mohithkanna27@gmail.com">E-mail</a>
+            </li>
+
+            <li>
+              <a href="#"> GitHub </a>
+            </li>
+          </ul>
+        </section>
+
+        <section class="footer-links">
+          <h3>Legal</h3>
+
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </section>
+      </section>
+
+      <section id="footer-bottom">
+        <p>© 2026 CINIX. All rights reserved.</p>
+
+        <p>
+          This product uses the TMDB API but is not endorsed or certified by
+          TMDB.
+        </p>
+      </section>
+    </footer>
+
+    <div id="horizontal-error-msg"></div>
+    <button id="global-back-btn">&#8592;</button>
+
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="orb orb-4"></div>
+    <div class="orb orb-5"></div>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

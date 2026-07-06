@@ -1,0 +1,14 @@
+<svg viewBox="0 0 256 384" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#d4af38" stroke="#d4af38">
+  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+  <g id="SVGRepo_iconCarrier"> 
+    <title>bookmark-plus-filled</title> 
+    <g id="Page-1" stroke-width="15" fill="none" fill-rule="evenodd"> 
+      <g id="icon" fill="#0d151e"> 
+        <polygon id="Path" points="256 0 256 384 128 298.666667 0 384 0 0"></polygon>
+        <line x1="128" y1="92" x2="128" y2="204" stroke="#d4af38" stroke-width="20"></line>
+        <line x1="72" y1="148" x2="184" y2="148" stroke="#d4af38" stroke-width="20"></line> 
+      </g> 
+    </g> 
+  </g>
+</svg>

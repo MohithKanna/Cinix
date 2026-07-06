@@ -1,0 +1,10 @@
+@import "./styles/base.css";
+@import "./styles/orbs.css";
+@import "./styles/card.css";
+@import "./styles/navbar.css";
+@import "./styles/search.css";
+@import "./styles/hero.css";
+@import "./styles/detail.css";
+@import "./styles/overlay.css";
+@import "./styles/footer.css";
+@import "./styles/watchlist.css";

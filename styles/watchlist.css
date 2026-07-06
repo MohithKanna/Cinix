@@ -1,0 +1,162 @@
+#watchlist-page {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.watchlist-page-title {
+  text-align: center;
+}
+.watchlist-card-wrapper {
+  display: grid;
+  min-height: 80vh;
+  grid-auto-rows: 350px;
+  overscroll-behavior-y: contain;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 180px));
+  justify-content: space-evenly;
+  margin: 20px auto;
+  padding: 20px;
+  overflow: scroll;
+  gap: var(--space-lg);
+}
+.watchlist-card-wrapper::-webkit-scrollbar {
+  display: none;
+}
+.offline-mode {
+  display: grid;
+  grid-auto-rows: 140px;
+  overscroll-behavior-y: contain;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 200px));
+  justify-items: center;
+  justify-content: space-evenly;
+  margin: 20px auto;
+  padding: 20px;
+  overflow: scroll;
+  gap: var(--space-md);
+}
+.offline-mode::-webkit-scrollbar {
+  display: none;
+}
+.offline-card {
+  width: 200px;
+  padding: 12px;
+  transition: all var(--transition);
+}
+.offline-card:hover {
+  background: var(--accent-muted);
+  border: 2px solid var(--accent-hover);
+}
+.remove-offline-card {
+  padding: var(--space-xs) var(--space-sm);
+  border: 2px solid var(--accent);
+  border-radius: var(--radius-full);
+  background: var(--glass-card);
+  transition: all var(--transition);
+}
+
+.remove-offline-card:hover,
+.remove-offline-card:active {
+  color: var(rating-low);
+  border: 2px solid rgb(244, 2, 2);
+  background-color: var(--accent-muted);
+}
+/* ─── Watchlist — Base fix (all screen sizes) ────────────── */
+
+.watchlist-card-wrapper,
+.offline-mode {
+  min-width: unset;
+  width: 100%;
+  max-height: calc(100vh - var(--navbar-h) - 120px);
+  height: unset;
+  box-sizing: border-box;
+}
+.empty-watchlist-container {
+  margin: 10%;
+  align-self: center;
+  justify-self: center;
+}
+.watch-list-main-img {
+  width: 10vw;
+  text-align: center;
+}
+
+.empty-watchlist-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 0;
+  width: 100%;
+}
+
+/* ── Small laptop (769px – 1024px) ───────────────────────── */
+@media (max-width: 1024px) {
+  .watchlist-card-wrapper {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 200px));
+    grid-auto-rows: 350px;
+    gap: var(--space-md);
+    padding: var(--space-lg);
+  }
+
+  .offline-mode {
+    grid-template-columns: repeat(auto-fill, minmax(190px, 190px));
+    padding: var(--space-lg);
+  }
+}
+
+/* ── Tablet (481px – 768px) ───────────────────────────────── */
+@media (max-width: 768px) {
+  .watchlist-card-wrapper {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 140px));
+    grid-auto-rows: 260px;
+    padding: var(--space-md);
+    margin: var(--space-md) auto;
+    gap: var(--space-md);
+  }
+
+  .offline-mode {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 180px));
+    grid-auto-rows: 120px;
+    padding: var(--space-md);
+    margin: var(--space-md) auto;
+    gap: var(--space-sm);
+  }
+
+  .offline-card {
+    width: 170px;
+  }
+}
+
+/* ── Mobile (≤ 480px) ─────────────────────────────────────── */
+@media (max-width: 480px) {
+  #watchlist-page {
+    align-items: stretch; /* let grids go full width */
+  }
+
+  .watchlist-card-wrapper {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 120px));
+    grid-auto-rows: 220px;
+    padding: var(--space-sm);
+    margin: var(--space-sm) auto;
+    gap: var(--space-sm);
+  }
+
+  .offline-mode {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 140px));
+    grid-auto-rows: 100px;
+    padding: var(--space-sm);
+    margin: var(--space-sm) auto;
+    gap: var(--space-xs);
+  }
+
+  .offline-card {
+    width: 140px;
+    padding: var(--space-sm);
+  }
+
+  .remove-offline-card {
+    font-size: var(--text-xs);
+    padding: 2px var(--space-xs);
+  }
+}

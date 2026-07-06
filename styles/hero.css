@@ -1,0 +1,235 @@
+#hero-section,
+.hero-section {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 16 / 9;
+  margin: 0 auto;
+  border: 2px solid var(--glass-border);
+  background-color: var(--glass-heavy);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+#hero-title {
+  letter-spacing: -2;
+  font-weight: 500;
+  pointer-events: none;
+}
+
+.hero-backdrop {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  filter: var(--blur-lg);
+  transition:
+    opacity 1s ease,
+    transform 2s ease,
+    filter 1s ease;
+}
+
+.hero-backdrop.fade-in {
+  opacity: 1;
+  transform: scale(1.05);
+  filter: blur(0);
+}
+.hero-backdrop.fade-out {
+  opacity: 0;
+  transform: scale(1);
+  filter: var(--blur-sm);
+}
+#hero-description-container {
+  width: 100%;
+  position: absolute;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.8) 20%,
+    rgba(0, 0, 0, 0.6) 50%,
+    rgba(0, 0, 0, 0.1) 90%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  font-size: var(--text-md);
+  padding: 16px;
+  bottom: 0;
+  left: 0;
+  z-index: 8;
+}
+
+#hero-description-container > * {
+  opacity: 0;
+  transform: translateY(20px);
+  filter: var(--blur-xs);
+  transition: all var(--transition);
+}
+
+#hero-description-container > *.show {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0);
+}
+
+.hero-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 50px;
+  height: 50px;
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  filter: contrast(150%);
+  font-size: 30px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+  pointer-events: all;
+  transition: var(--transition);
+}
+
+#hero-prev {
+  left: 16px;
+}
+#hero-next {
+  right: 16px;
+}
+
+#hero-prev:active {
+  color: var(--accent);
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1));
+}
+
+#hero-next:active {
+  color: var(--accent);
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1));
+}
+
+.hero-nav-btn:active {
+  transform: translateY(-50%);
+}
+#hero-overview {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  max-height: 3.2em;
+}
+#hero-details-btn:active {
+  color: var(--accent-hover);
+  text-decoration: underline var(--accent-hover);
+}
+@media (hover: hover) and (pointer: fine) {
+  #hero-prev:hover {
+    color: var(--accent);
+    background: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.1)
+    );
+  }
+
+  #hero-next:hover {
+    color: var(--accent);
+    background: linear-gradient(
+      to left,
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.1)
+    );
+  }
+
+  .hero-nav-btn:hover {
+    transform: translateY(-50%);
+  }
+  #hero-overview {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    max-height: 3.2em;
+  }
+  #hero-details-btn:hover {
+    color: var(--accent-hover);
+    text-decoration: underline var(--accent-hover);
+  }
+}
+/* ── Mobile (≤ 480px) ───────────────────────── */
+@media (max-width: 480px) {
+  #hero-section,
+  .hero-section {
+    aspect-ratio: 4 / 5;
+    border-radius: var(--radius-sm);
+  }
+  .hero-backdrop {
+    object-fit: contain;
+  }
+  #hero-title {
+    font-size: var(--text-xl);
+    font-weight: 300;
+  }
+
+  #hero-meta {
+    font-size: var(--text-xs);
+  }
+
+  #hero-overview,
+  #hero-details-btn {
+    display: none;
+  }
+
+  .hero-nav-btn {
+    width: 28px;
+    height: 28px;
+    font-size: var(--text-md);
+  }
+
+  #hero-prev {
+    left: 8px;
+  }
+  #hero-next {
+    right: 8px;
+  }
+
+  #hero-description-container {
+    padding: var(--space-sm) var(--space-md);
+  }
+}
+
+/* ── Tablet (481px – 768px) ─────────────────── */
+@media (min-width: 481px) and (max-width: 768px) {
+  #hero-section,
+  .hero-section {
+    aspect-ratio: 16 / 9;
+  }
+  .hero-backdrop {
+    object-fit: contain;
+  }
+  #hero-title {
+    font-size: var(--text-lg);
+  }
+
+  #hero-overview {
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    max-height: 2.4em;
+  }
+
+  #hero-details-btn {
+    display: none;
+  }
+
+  .hero-nav-btn {
+    width: 36px;
+    height: 36px;
+    font-size: var(--text-lg);
+  }
+}
+
+/* ── Small laptop (769px – 1024px) ─────────── */
+@media (min-width: 769px) and (max-width: 1024px) {
+  #hero-overview {
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    max-height: 4.8em;
+  }
+}
