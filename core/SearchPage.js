@@ -276,7 +276,7 @@ class SearchPage {
     const adultText = this.ui.el("span", "filter-checkbox-text");
     adultLabel.htmlFor = "search-adult";
 
-    adultText.textContent = "Filtered Search";
+    adultText.textContent = "unfiltered Search";
     adultLabel.append(adultCheckbox, adultText);
     adultSection.append(adultLabel);
 
